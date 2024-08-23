@@ -188,7 +188,7 @@ else if (opc==3){
         let empresa = prompt("Ingresa el nombre de la empresa en la que trabajó la persona: ")
         let periodo = prompt("Ingresa el periodo de duración de la persona: ")
         let responsabilidades = prompt("Ingresa las responsabilidades de la persona: ")
-        experiencia[0]["experiencia_laboral"].push({"puesto": puesto, "empresa": empresa, "periodo": periodo, "responsabilidades": responsabilidades})
+        experiencia[0]["experiencia_laboral"].push({"puesto": puesto, "empresa": empresa, "periodo": periodo, "responsabilidades": responsabilidades});
         console.log(experiencia)
     }
 }

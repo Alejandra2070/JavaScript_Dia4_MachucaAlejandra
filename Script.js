@@ -2,7 +2,7 @@ var informacion = [
     {
         "informacion_personal": [
             {
-                "nombre": "Juan Pérez",
+                "nombre": "juan",
                 "edad": 30,
                 "calle": "Calle Principal",
                 "numero": 123,
@@ -85,9 +85,41 @@ if (opc==1){
             
     }
     if (x==2){
-        for (var act of informacion[0]["informacion_personal"]){
-            console.log("Qué deseas actualizar?")
-            console.log("1. Nombre", "2. Edad", "3. Calle", "4. Númerp", "5. Ciudad", "6. Correo", "7. Teléfono")
+        nombre1=prompt("Ingresa el nombre del usuario al que quieres actualizar la información: ")
+        for(const i of informacion[0]["informacion_personal"]){
+            if (nombre1==i["nombre"]){
+                console.log("1. Nombre", "2. Edad", "3. Calle", "4. Número", "5. Ciudad", "6. Correo", "7. Teléfono");
+                v=prompt("Qué deseas actualizar?");
+                if (v==1){
+                    let nombre=prompt("Ingresa el nuevo nombre: ")
+                    i["nombre"]=nombre
+                }
+                if (v==2){
+                    let edad=prompt("Ingresa la edad: ")
+                    i["edad"]=edad
+                }
+                if (v==3){
+                    let calle=prompt("Ingresa la nueva calle: ")
+                    i["calle"]=calle
+                }
+                if (v==4){
+                    let numero=prompt("Ingresa el nuevo número de residencia: ")
+                    i["numero"]=numero
+                }
+                if (v==5){
+                    let ciudad=prompt("Ingresa la ciudad: ")
+                    i["ciudad"]=ciudad
+                }
+                if (v==6){
+                    let correo=prompt("Ingresa el nuevo correo: ")
+                    i["correo"]=correo
+                }
+                if (v==7){
+                    let telefono=prompt("Ingresa el nuevo número de teléfono: ")
+                    i["telefono"]=telefono
+                }
+            }
+            console.log(informacion[0]["informacion_personal"][0])
         }
     }
     if (x==3){
@@ -109,9 +141,8 @@ if (opc==1){
 else if (opc==2){
     console.log("---Historial educativo---")
     console.log("1. Ver información")
-    console.log("2. Actualizar información")
-    console.log("3. Eliminar datos")
-    console.log("4. Agregar información")
+    console.log("2. Eliminar datos")
+    console.log("3. Agregar información")
     p=prompt("Elige una de las opciones: ")
     if (p==1){
         for (var histo of historial[0]["historial_educativo"]){
@@ -121,11 +152,11 @@ else if (opc==2){
             console.log("Año de finalización:",histo["anio_fin"])
         }
     }
-    if (p==3){
+    if (p==2){
         [historial].pop()
         console.log(historial)
     }
-    if (p==4){
+    if (p==3){
         let nivel = prompt("Ingrese el nivel de estudio: ")
         let institucion = prompt("Ingrese el nombre de la institución en la que estudió: ")
         let anio_inicio = prompt("Ingrese el año en que entró a estudiar: ")
@@ -137,9 +168,8 @@ else if (opc==2){
 else if (opc==3){
     console.log("---Experiencia laboral---")
     console.log("1. Ver información")
-    console.log("2. Actualizar información")
-    console.log("3. Eliminar datos")
-    console.log("4. Agregar información")
+    console.log("2. Eliminar datos")
+    console.log("3. Agregar información")
     c=prompt("Elige una de estas opciones: ")
     if (c==1){
         for (var exp of experiencia[0]["experiencia_laboral"]){
@@ -149,11 +179,11 @@ else if (opc==3){
             console.log("Responsabilidades:",exp["responsabilidades"])
         }
     }
-    if (c==3){
+    if (c==2){
         [experiencia].pop()
         console.log(experiencia)
     }
-    if (c==4){
+    if (c==3){
         let puesto = prompt("Ingresa el puesto de la persona: ")
         let empresa = prompt("Ingresa el nombre de la empresa en la que trabajó la persona: ")
         let periodo = prompt("Ingresa el periodo de duración de la persona: ")

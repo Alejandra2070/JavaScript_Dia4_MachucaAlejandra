@@ -12,7 +12,7 @@ var productos=[
         ]
     } 
 ]
-var proveedores=[
+var supplier=[
     {
         "suppliers": [
       {
@@ -81,8 +81,13 @@ if (opc==1){
     }
     if (x==3){
         function deleteProduct(id){
-            [productos].pop()
-            console.log(productos)
+            id=prompt("Ingresa el id del producto que deseas eliminar: ")
+            for (const i of productos[0]["products"]){
+                if (id==i["id"]){
+                    [products].pop()
+                    console.log(products)
+                }
+            }
         }
     }
     if (x==4){
@@ -133,4 +138,133 @@ if(opc==2){
     console.log("2. Añadir proveedores")
     console.log("3. Eliminar proveedores")
     console.log("4. Actualizar información de los proveedores")
+    o=prompt("Elige una de estas opciones: ")
+    if (o==1){
+        function viewSuppliers(){
+            for (var ver of productos[0]["products"]){
+                console.log("ID:",ver.id)
+                console.log("Nombre del proveedor:",ver.name)
+                console.log("Número de teléfono:",ver.phone)
+                console.log("Email:",ver.email)
+                console.log("Dirección:",ver.address)
+            }
+        }
+        console.log(viewSuppliers())
+    }
+    if (o==2){
+        function addSupplier(supplier){
+            let id=prompt("Ingresa el id del proveedor: ")
+            let name=prompt("Ingresa el nombre del proveedor: ")
+            let phone=prompt("Ingresa el número de teléfono del proveedor: ")
+            let email=prompt("Ingresa el email del proveedor: ")
+            let address=prompt("Ingresa la dirección del proveedor: ")
+            supplier[0]["suppliers"].push({"id": id, "name": name, "phone": phone, "email": email, "address": address})
+            console.log(supplier)
+        }
+        console.log(addSupplier())
+    }
+    if (o==3){
+        function deleteSupplier(id){
+            [supplier].pop()
+            console.log(supplier)
+        }
+        console.log(deleteSupplier)
+    }
+    if (o==4){
+        function updateSupplier(id, newDetails){
+            id=prompt("Ingresa el id del proveedor al que quieres actualizar la información: ")
+            for (const i of supplier[0]["suppliers"]){
+                if (id==i["id"]){
+                    console.log("1. Id")
+                    console.log("2. Nombre")
+                    console.log("3. Número de teléfono")
+                    console.log("4. Email")
+                    console.log("5. Dirección")
+                    newDetails=prompt("Qué deseas actualizar del proveedor?: ")
+                    if (newDetails==1){
+                        let id=prompt("Ingresa el nuevo id: ")
+                        i["id"]=id
+                    }
+                    if (newDetails==2){
+                        let name=prompt("Ingresa el nuevo nombre del proveedor: ")
+                        i["name"]=name
+                    }
+                    if (newDetails==3){
+                        let phone=prompt("Ingresa el nuevo número de teléfono: ")
+                        i["phone"]=phone
+                    }
+                    if (newDetails==4){
+                        let email=prompt("Ingresa el nuevo email del proveedor: ")
+                        i["email"]=email
+                    }
+                    if (newDetails==5){
+                        let address=prompt("Ingresa la nueva direción del proveedor: ")
+                        i["address"]=address
+                    }
+                }
+            }
+        }
+        console.log(updateSupplier())
+    }
 }
+if (opc==3){
+    console.log("----Esta es la Gestión de pedidos----")
+    console.log("1. Ver pedidos")
+    console.log("2. Eliminar pedidos")
+    console.log("3. Actualizar pedidos")
+    p=prompt("Elige una de nuestras opciones: ")
+    if (p==1){
+        function viewOrders(){
+            for (var ver of ordenes[0]["orders"]){
+                console.log("Id de la orden:",ver.orderId)
+                console.log("Id del producto:",ver.productId)
+                console.log("Cantidad del producto:",ver.quantity)
+                console.log("Fecha de la orden:",ver.orderDate)
+                console.log("Estatus de la orden:",ver.status)
+            }
+        }
+        console.log(viewOrders())
+    }
+    if (p==2){
+        function deleteOrder(orderId){
+            [ordenes].pop()
+            console.log(ordenes)
+        }
+    }
+    if (p==3){
+        function updateOrder(orderId, newDetails){
+            orderId=prompt("Ingresa el id de la orden a la que quieres actualizar la información: ")
+            for (const i of ordenes[0]["orders"]){
+                if (orderId==i["orderId"]){
+                    console.log("1. Id de la orden")
+                    console.log("2. Id del producto")
+                    console.log("3. Cantidad del producto")
+                    console.log("4. Fecha de la orden")
+                    console.log("5. Estatus del pedido")
+                    r=prompt("Elige una de estas opciones: ")
+                    if (r==1){
+                        let orderId=prompt("Ingresa el nuevo id de la orden: ")
+                        i["orderId"]=orderId
+                    }
+                    if (r==2){
+                        let productId=prompt("Ingresa el nuevo id del producto: ")
+                        i["productId"]=productId
+                    }
+                    if (r==3){
+                        let quantity=prompt("Ingresa la nueva cantidad del producto: ")
+                        i["quantity"]=quantity
+                    }
+                    if (r==4){
+                        let orderDate=prompt("Ingresa la nueva fecha de la orden: ")
+                        i["orderDate"]=orderDate
+                    }
+                    if (r==5){
+                        let status=prompt("Ingresa el estatus de la orden: ")
+                        i["status"]=status
+                    }
+                }
+            }
+        }
+    }
+}
+//Desarrollado por Alejandra Machuca Grupo T2

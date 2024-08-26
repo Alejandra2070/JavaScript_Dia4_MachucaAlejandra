@@ -8,6 +8,14 @@ var productos=[
             "price": 999.99,
             "quantityInStock": 50,
             "supplierId": 101
+          },
+          {
+            "id": 2,
+            "name": "Smartphone",
+            "category": "Electronics",
+            "price": 999,
+            "quantityInStock": 20,
+            "supplierId": 101
           }
         ]
     } 
@@ -45,6 +53,10 @@ console.log("----Bienvenidossss----")
 console.log("1. Gestión de productos")
 console.log("2. Gestión de proveedores")
 console.log("3. Gestión de pedidos")
+console.log("4. Gestión de existencias")
+console.log("5. Gestión de informes")
+console.log("6. Búsqueda y filtrado de productos")
+console.log("7. Búsqueda y filtrado de pedidos")
 opc=prompt("Elige una de las opciones de nuestro menú: ")
 if (opc==1){
     console.log("---Esta es la gestión de productos---")
@@ -262,6 +274,184 @@ if (opc==3){
                         let status=prompt("Ingresa el estatus de la orden: ")
                         i["status"]=status
                     }
+                }
+            }
+        }
+    }
+}
+if (opc==4){
+    console.log("1. Ver productos con poco stock")
+    console.log("2. Aumentar nivel de stock de un producto")
+    s=prompt("Elige una de estas opciones: ")
+    if (s==1){
+        function checkStockLevels(){
+            for (var verProd of productos[0]["products"]){
+                if (verProd.quantityInStock<21){
+                    console.log("Estos son los productos con poco stock: ")
+                    console.log("ID:",verProd.id)
+                    console.log("Nombre del producto:",verProd.name)
+                    console.log("Categoría del producto:",verProd.category)
+                    console.log("Precio del producto:",verProd.price)
+                    console.log("Cantidad en stock:",verProd.quantityInStock)
+                    console.log("Id del proveedor del producto:",verProd.supplierId)
+                }
+            }
+        }
+        console.log(checkStockLevels())
+    }
+    else if (s==2){
+        function restockProduct(id, quantity){
+            id=prompt("Ingresa el id del producto al que quieres agregar más cantidad en stock: ")
+            for (var quantity of productos[0]["products"]){
+                if (id==quantity.id){
+                    let quantityInStock=prompt("Ingrese la nueva cantidad en stock del producto: ")
+                    quantity["quantityInStock"]=quantityInStock
+                }
+            }
+        }
+        console.log(restockProduct())
+    }
+}
+if (opc==5){
+    function generateSalesReport(){
+        console.log("1. Número total de pedidos")
+        console.log("2. Ingresos totales generados")
+        console.log("3. Desglose de ventas por productos")
+        console.log("4. Informe de todos los productos")
+        m=prompt("Elige una de estas opciones: ")
+        if (m==1){
+            fecha=prompt("Ingresa la fecha en que quieres revisar el número de pedidos: ")
+            pedidos=ordenes[0]["orders"].filter(pedido=>pedido.orderDate==fecha)
+            total=pedidos.length
+            console.log("Este es el número total de pedidos: ",total)
+        }
+        else if(m==2){
+            sumaTotal=0
+            for (var ing of pedidos){
+                if (ing.orderDate==fecha){
+                    console.log("Id de la orden:",ing.orderId)
+                    console.log("Id del producto:",ing.productId)
+                    console.log("Cantidad:",ing.quantity)
+                    console.log("Fecha de la orden:",ing.orderDate)
+                    search=ing.productId
+
+                    for (var ingr of productos[0]["products"]){
+                        if (ingr.id==search){
+                            total=ingr.quantity*ingr.price
+                            sumaTotal=+total
+                        }
+                    }
+                }
+            }
+            console.log("Este fue el total de los ingresos: ",sumaTotal)
+        }
+        else if(m==3){}
+        else if(m==4){
+            function generateInventoryReport(){
+                for (var ver of productos[0]["products"]){
+                    console.log("Este es el informe de todos los productos: ")
+                    console.log("ID:",ver.id)
+                    console.log("Nombre del producto:",ver.name)
+                    console.log("Categoría del producto:",ver.category)
+                    console.log("Precio del producto:",ver.price)
+                    console.log("Cantidad en stock del producto:",ver.quantityInStock)
+                    console.log("Id del proveedor del producto:",ver.supplierId)
+                    valor=ver.quantityInStock*ver.price
+                    console.log("El valor total de la cantidad en stock es de: ",valor)
+                }
+            }
+            console.log(generateInventoryReport())
+        }
+    }
+    console.log(generateSalesReport())
+}
+if(opc==6){
+    function searchProducts(query){
+        console.log("1. Nombre")
+        console.log("2. Categoría")
+        console.log("3. Proveedor")
+        query=prompt("Estos son los datos con los que puedes realizar búsquedas. Elige una opción: ")
+        if (query==1){
+            nombre=prompt("Ingresa el nombre del producto que deseas buscar: ")
+            for (var ver of productos[0]["products"]){
+                if (nombre==ver.name){
+                    console.log("ID:",ver.id)
+                    console.log("Nombre del producto:",ver.name)
+                    console.log("Categoría:",ver.category)
+                    console.log("Precio:",ver.price)
+                    console.log("Cantidad en stock:",ver.quantityInStock)
+                    console.log("Id del proveedor:",ver.supplierId)
+                }
+            }
+        }
+        else if (query==2){
+            categoria=prompt("Ingresa la categoría del producto que quieres buscar: ")
+            for (var ver of productos[0]["products"]){
+                if (categoria==ver.category){
+                    console.log("ID:",ver.id)
+                    console.log("Nombre del producto:",ver.name)
+                    console.log("Categoría:",ver.category)
+                    console.log("Precio:",ver.price)
+                    console.log("Cantidad en stock:",ver.quantityInStock)
+                    console.log("Id del proveedor:",ver.supplierId)
+                }
+            }
+        }
+        else if (query==3){
+            proveedor=prompt("Ingresa el id del proveedor del producto: ")
+            for (var ver of productos[0]["products"]){
+                if (proveedor==ver.supplierId){
+                    console.log("ID:",ver.id)
+                    console.log("Nombre del producto:",ver.name)
+                    console.log("Categoría:",ver.category)
+                    console.log("Precio:",ver.price)
+                    console.log("Cantidad en stock:",ver.quantityInStock)
+                    console.log("Id del proveedor:",ver.supplierId)
+                }
+            }
+        }
+    }
+    console.log(searchProducts())
+}
+if (opc==7){
+    function filterOrders(criteria){
+        console.log("1. EStado")
+        console.log("2. Fechas")
+        console.log("3. Producto")
+        criteria=prompt("Estos son los datos con los que puedes realizar búsquedas. Elige una opción: ")
+        if (criteria==1){
+            for (var ver of ordenes[0]["orders"]){
+                estado=prompt("Ingresa el estado de la orden que quieres buscar: ")
+                if (estado==ver.status){
+                    console.log("Id de la orden:",ver.orderId)
+                    console.log("Id del producto:",ver.productId)
+                    console.log("Cantidad del producto:",ver.quantity)
+                    console.log("Fecha de la orden:",ver.orderDate)
+                    console.log("Estatus de la orden:",ver.status)
+                }
+            }
+        }
+        else if (criteria==2){
+            for (var ver of productos[0]["products"]){
+                fecha=prompt("Ingresa la fecha de la orden que quieres buscar: ")
+                if (fecha==ver.orderDate){
+                    console.log("Id de la orden:",ver.orderId)
+                    console.log("Id del producto:",ver.productId)
+                    console.log("Cantidad del producto:",ver.quantity)
+                    console.log("Fecha de la orden:",ver.orderDate)
+                    console.log("Estatus de la orden:",ver.status)
+                }
+            }
+        }
+        else if (criteria==3){
+            for (var ver of productos[0]["products"]){
+                producto=prompt("Ingresa el id del producto que está en la orden que quieres buscar: ")
+                if (producto==ver.productId){
+                    console.log("Id de la orden:",ver.orderId)
+                    console.log("Id del producto:",ver.productId)
+                    console.log("Cantidad del producto:",ver.quantity)
+                    console.log("Fecha de la orden:",ver.orderDate)
+                    console.log("Estatus de la orden:",ver.status)
                 }
             }
         }

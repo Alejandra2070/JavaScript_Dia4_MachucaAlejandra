@@ -68,7 +68,7 @@ if (opc==1){
         console.log("3. Eliminar productos")
         console.log("4. Actualizar productos")
         console.log("5. Volver al menú")
-        x=prompt("Elige una de estas opciones: ")
+        x=(prompt("Elige una de estas opciones: "))
         if (x==1){
             function viewProducts(){
                 for (var ver of productos[0]["products"]){
@@ -82,8 +82,8 @@ if (opc==1){
             }
             console.log(viewProducts())
         }
-        if (x==2){
-            function addProduct(productos){
+        else if (x==2){
+            function addProduct(){
                 let id=prompt("Ingresa el id del producto: ")
                 let name=prompt("Ingresa el nombre del producto: ")
                 let category=prompt("Ingresa la categoría del producto: ")
@@ -91,22 +91,24 @@ if (opc==1){
                 let quantityInStock=prompt("Ingresa la cantidad en stock del producto: ")
                 let supplierId=prompt("Ingresa el id del proveedor del producto: ")
                 productos[0]["products"].push({"id": id, "name": name, "category": category, "price": price, "quantityInStock": quantityInStock, "supplierId":supplierId})
-                console.log(productos)
+                console.log(["products"])
             }
-            console.log(addProduct(product))
+            console.log(addProduct())
         }
-        if (x==3){
+        else if (x==3){
             function deleteProduct(id){
                 id=prompt("Ingresa el id del producto que deseas eliminar: ")
                 for (const i of productos[0]["products"]){
                     if (id==i["id"]){
-                        [products].pop()
-                        console.log(products)
+                        var ubi=productos[0]["products"].indexOf(i)
+                        productos[0]["products"].splice(ubi,1)
+                        console.log(productos)
                     }
                 }
             }
+            console.log(deleteProduct())
         }
-        if (x==4){
+        else if (x==4){
             function updateProduct(id, newDetails){
                 id=prompt("Ingresa el id del producto al que quieres actualizar información: ")
                 for (const i of productos[0]["products"]){
@@ -144,8 +146,9 @@ if (opc==1){
                         }
                     }
                 }
+                console.log()
             }
-            console.log(updateProduct(id, newDetails))
+            console.log(updateProduct())
         }
         else if (x==5){
             console.log("Volviste al menú")
@@ -165,12 +168,12 @@ if(opc==2){
         o=prompt("Elige una de estas opciones: ")
         if (o==1){
             function viewSuppliers(){
-                for (var ver of productos[0]["products"]){
+                for (var ver of supplier[0]["suppliers"]){
                     console.log("ID:",ver.id)
                     console.log("Nombre del proveedor:",ver.name)
-                    console.log("Número de teléfono:",ver.phone)
-                    console.log("Email:",ver.email)
-                    console.log("Dirección:",ver.address)
+                    console.log("Número de teléfono:",ver.contactInfo.phone)
+                    console.log("Email:",ver.contactInfo.email)
+                    console.log("Dirección:",ver.contactInfo.address)
                 }
             }
             console.log(viewSuppliers())
@@ -375,9 +378,9 @@ if (opc==5){
                         console.log("Fecha de la orden:",ing.orderDate)
                         search=ing.productId
 
-                        for (var ingr of productos[0]["products"]){
-                            if (ingr.id==search){
-                                total=ingr.quantity*ingr.price
+                        for (var ing of productos[0]["products"]){
+                            if (ing.id==search){
+                                total=ing.quantity*ing.price
                                 sumaTotal=+total
                             }
                         }
@@ -385,7 +388,23 @@ if (opc==5){
                 }
                 console.log("Este fue el total de los ingresos: ",sumaTotal)
             }
-            else if(m==3){}
+            else if(m==3){
+                id=prompt("Ingresa el id del producto para ver el desglose: ")
+                for (var ver of productos[0]["products"]){
+                    if (id==ver.id){
+                        console.log("Id:",ver.id)
+                        console.log("Nombre del producto: ",ver.name)
+                        console.log("Precio del producto: ",ver.price)
+                        busq=ver.price
+
+                        for (var ver of ordenes[0]["orders"]){
+                            precio=(ver.quantity*ver.price)
+                            console.log("Precio total de la venta: ",precio)
+                        }
+                    }
+
+                }
+            }
             else if(m==4){
                 function generateInventoryReport(){
                     for (var ver of productos[0]["products"]){
@@ -406,8 +425,7 @@ if (opc==5){
                 console.log("Volviste al menú")
                 boolea=false
             }
-        }
-        
+        } 
     }
     console.log(generateSalesReport())
 }

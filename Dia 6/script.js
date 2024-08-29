@@ -190,8 +190,8 @@ fetch("info.json")
 
                 buttonActProv.addEventListener("click", (e) => {
                     let nuevoAddressProv = parseInt(document.getElementById("actualizarProv").value);
-                    i.address = nuevoAddressProv
-                    actualizarProveedores()
+                    i.contactInfo["address"] = nuevoAddressProv
+                    verProveedores()
                 })
             }
         }
@@ -200,11 +200,12 @@ fetch("info.json")
         }
     }
     button9.addEventListener("click", (e) => {
-        actualizarProveedores()
+        
         document.getElementById("idActProv").style.display = "none"
         document.getElementById("button9").style.display = "none"
         document.getElementById("actualizarProv").style.display = "block"
         document.getElementById("buttonActuProv").style.display = "block"
+        actualizarProveedores()
     })
 
     function eliminarProveedores() {

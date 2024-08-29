@@ -188,10 +188,10 @@ fetch("info.json")
             <h3>Dirección: ${i["contactInfo"]["address"]}`
                 contado = true
 
-                buttonActProv.addEventListener("click", (e) => {
+                buttonActuProv.addEventListener("click", (e) => {
                     let nuevoAddressProv = parseInt(document.getElementById("actualizarProv").value);
                     i.contactInfo["address"] = nuevoAddressProv
-                    verProveedores()
+                    actualizarProveedores()
                 })
             }
         }
@@ -206,6 +206,7 @@ fetch("info.json")
         document.getElementById("actualizarProv").style.display = "block"
         document.getElementById("buttonActuProv").style.display = "block"
         actualizarProveedores()
+        
     })
 
     function eliminarProveedores() {

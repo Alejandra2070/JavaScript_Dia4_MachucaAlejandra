@@ -113,6 +113,18 @@ document.getElementById("boton").addEventListener("click", function (event1) {
                             </td>
                         </td>
                     </tr>
+                    <tr class="table-dark">
+                        <td scope="row">Created: </td>
+                        <td>${data.created}</td>
+                    </tr>
+                    <tr class="table-dark">
+                        <td scope="row">Edited: </td>
+                        <td>${data.edited}</td>
+                    </tr>
+                    <tr class="table-dark">
+                        <td scope="row">url: </td>
+                        <td>${data.url}</td>
+                    </tr>
                 </tbody>
             </table>`
             fetch(data.homeworld)

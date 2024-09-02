@@ -1,3 +1,8 @@
+@font-face {
+    font-family: letra;
+    src: url(https://fonts.gstatic.com/s/oxanium/v19/RrQQboN_4yJ0JmiMe2LE0Q.woff2) format('woff2');
+}
+
 body{
     background: linear-gradient(#6eb9f5,#ebf5fd);
     height:100vh;
@@ -15,37 +20,77 @@ body{
     position: relative;
     text-align: center;
     font-size: 1.3vw;
-    margin-left: -15em;
+    margin-left: -19.7em;
     margin-top: 13em;
-    width: 15vw;
-    height: 1.8vw;
-    box-shadow: 3px 5px gray;
+    width: 20vw;
+    height: 2.5vw;
+    box-shadow: -3px 5px rgb(125, 124, 124);
+    border-radius: 0.5vw;
+    font-family: letra;
 }
 
 #next{
+    transition: all 0.2s ease;
     position: relative;
     font-size: 1.3vw;
-    width: 7vw;
-    height: 2.3vw;
-    left: -7vw;
-    top: 12vw;
-    background: rgb(95, 95, 95);
+    width: 9vw;
+    height: 3vw;
+    left: -9vw;
+    top: 15vw;
+    background: rgb(76, 76, 76);
+    box-shadow: -3px 5px rgb(51, 51, 51);
+    border-radius: 0.5vw;
     color: white;
+    font-family: letra;
+}
+#next:active{
+    box-shadow: -2px 2px 5px black;
+    transform: translateY(2px);
 }
 
 #prev{
+    transition: all 0.2s ease;
     position: relative;
     font-size: 1.3vw;
-    width: 7vw;
-    height: 2.3vw;
-    left: -23vw;
-    top: 12vw;
-    background: rgb(95, 95, 95);
+    width: 9vw;
+    height: 3vw;
+    left: -29vw;
+    top: 15vw;
+    background: rgb(76, 76, 76);
+    box-shadow: -3px 5px rgb(51, 51, 51);
+    border-radius: 0.5vw;
     color: white;
+    font-family: letra;
+}
+
+#prev:active{
+    box-shadow: -2px 2px 5px black;
+    transform: translateY(2px);
 }
 
 #output{
-    margin-top: -30vw;
-    margin-left: 42vw;
-    font-size: 1.5vw;
+    text-align: center;
+}
+
+#output img{
+    position: relative;
+    top: -32vw;
+    left: -7.5vw;
+    width: 5vw;
+    height: 6vw;
+}
+
+#output h3{
+    font-size: 1.2vw;
+    margin-top: -28vw;
+    margin-left: -4vw;
+    font-family: letra;
+}
+
+#output p{
+    margin-top: -2.7vw;
+    margin-left: -14vw;
+    font-family: letra;
+    font-size: 1.2vw;
+    color: gray;
 }

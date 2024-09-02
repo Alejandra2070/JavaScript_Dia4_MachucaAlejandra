@@ -39,9 +39,9 @@ document.getElementById("boton").addEventListener("click", function (event1) {
                     <td>${data.gender}</td>
                     </tr>
                     <tr class="table-dark">
-                        <td scope="row">Homeworld:</td>
+                        <th scope="row">Homeworld:</th>
                             <td>
-                                <ul>
+                                <ul class="list-group">
                                     <li id="homeworld" class="list-group-item">
                                         <table>
                                             <tbody>
@@ -54,9 +54,9 @@ document.getElementById("boton").addEventListener("click", function (event1) {
                         </td>
                     </tr>
                     <tr class="table-dark">
-                        <td scope="row">Films: </td>
+                        <th scope="row">Films: </th>
                             <td>
-                                <ul>
+                                <ul class="list-group">
                                     <li id="fil" class="list-group-item">
                                         <table>
                                             <tbody>
@@ -69,9 +69,9 @@ document.getElementById("boton").addEventListener("click", function (event1) {
                         </td>
                     </tr>
                     <tr class="table-dark">
-                        <td scope="row">Species: </td>
+                        <th scope="row">Species: </th>
                             <td>
-                                <ul>
+                                <ul class="list-group">
                                     <li id="specie" class="list-group-item">
                                         <table>
                                             <tbody>
@@ -84,9 +84,9 @@ document.getElementById("boton").addEventListener("click", function (event1) {
                         </td>
                     </tr>
                     <tr class="table-dark">
-                        <td scope="row">Vehicles: </td>
+                        <th scope="row">Vehicles: </th>
                             <td>
-                                <ul>
+                                <ul class="list-group">
                                     <li id="vehicle" class="list-group-item">
                                         <table>
                                             <tbody>
@@ -99,9 +99,9 @@ document.getElementById("boton").addEventListener("click", function (event1) {
                         </td>
                     </tr>  
                     <tr class="table-dark">
-                        <td scope="row">Starships: </td>
+                        <th scope="row">Starships: </th>
                             <td>
-                                <ul>
+                                <ul class="list-group">
                                     <li id="starship" class="list-group-item">
                                         <table>
                                             <tbody>
@@ -114,15 +114,15 @@ document.getElementById("boton").addEventListener("click", function (event1) {
                         </td>
                     </tr>
                     <tr class="table-dark">
-                        <td scope="row">Created: </td>
+                        <th scope="row">Created: </th>
                         <td>${data.created}</td>
                     </tr>
                     <tr class="table-dark">
-                        <td scope="row">Edited: </td>
+                        <th scope="row">Edited: </th>
                         <td>${data.edited}</td>
                     </tr>
                     <tr class="table-dark">
-                        <td scope="row">url: </td>
+                        <th scope="row">Url: </th>
                         <td>${data.url}</td>
                     </tr>
                 </tbody>

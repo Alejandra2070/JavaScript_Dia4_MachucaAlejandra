@@ -3,8 +3,12 @@
     src: url(https://fonts.gstatic.com/s/oxanium/v19/RrQQboN_4yJ0JmiMe2LE0Q.woff2) format('woff2');
 }
 
-body{
+#contenedor{
     background: linear-gradient(#6eb9f5,#ebf5fd);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height:100vh;
 }
 
@@ -13,7 +17,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    z-index: 3px;
+    margin-left: 14vw;
 }
 
 #boton{
@@ -70,6 +74,7 @@ body{
 
 #output{
     text-align: center;
+    margin-left: 15vw;
 }
 
 #output img{

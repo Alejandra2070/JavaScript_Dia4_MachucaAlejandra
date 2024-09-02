@@ -1,0 +1,51 @@
+body{
+    background: linear-gradient(#6eb9f5,#ebf5fd);
+    height:100vh;
+}
+
+#imagen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    z-index: 3px;
+}
+
+#boton{
+    position: relative;
+    text-align: center;
+    font-size: 1.3vw;
+    margin-left: -15em;
+    margin-top: 13em;
+    width: 15vw;
+    height: 1.8vw;
+    box-shadow: 3px 5px gray;
+}
+
+#next{
+    position: relative;
+    font-size: 1.3vw;
+    width: 7vw;
+    height: 2.3vw;
+    left: -7vw;
+    top: 12vw;
+    background: rgb(95, 95, 95);
+    color: white;
+}
+
+#prev{
+    position: relative;
+    font-size: 1.3vw;
+    width: 7vw;
+    height: 2.3vw;
+    left: -23vw;
+    top: 12vw;
+    background: rgb(95, 95, 95);
+    color: white;
+}
+
+#output{
+    margin-top: -30vw;
+    margin-left: 42vw;
+    font-size: 1.5vw;
+}

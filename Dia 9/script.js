@@ -34,6 +34,7 @@ function leer(revisar) {
             // Añade la imagen, el nombre y el ID del Pokémon al elemento con id "output"
             document.getElementById("output").innerHTML += `
                 <img src="${pasos}">
+                <audio autoplay src="${data.cries.latest}"></audio>
                 <h3>${Name}</h3>
                 <p>${id}</p>
             `;

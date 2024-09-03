@@ -16,17 +16,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80vh;
     margin-left: 14vw;
+    margin-top: 2vw;
 }
 
 #boton{
     position: relative;
     text-align: center;
     font-size: 1.3vw;
-    margin-left: -19.7em;
-    margin-top: 13em;
-    width: 20vw;
+    margin-left: -15.6em;
+    margin-top: 12em;
+    width: 16vw;
     height: 2.5vw;
     box-shadow: -3px 5px rgb(125, 124, 124);
     border-radius: 0.5vw;
@@ -37,10 +38,10 @@
     transition: all 0.2s ease;
     position: relative;
     font-size: 1.3vw;
-    width: 9vw;
+    width: 7vw;
     height: 3vw;
-    left: -9vw;
-    top: 15vw;
+    left: -7vw;
+    top: 12vw;
     background: rgb(76, 76, 76);
     box-shadow: -3px 5px rgb(51, 51, 51);
     border-radius: 0.5vw;
@@ -56,10 +57,10 @@
     transition: all 0.2s ease;
     position: relative;
     font-size: 1.3vw;
-    width: 9vw;
+    width: 7vw;
     height: 3vw;
-    left: -29vw;
-    top: 15vw;
+    left: -23vw;
+    top: 12vw;
     background: rgb(76, 76, 76);
     box-shadow: -3px 5px rgb(51, 51, 51);
     border-radius: 0.5vw;
@@ -79,15 +80,15 @@
 
 #output img{
     position: relative;
-    top: -32vw;
-    left: -7.5vw;
-    width: 5vw;
-    height: 6vw;
+    top: -27vw;
+    left: -6.8vw;
+    width: 8vw;
+    height: 7vw;
 }
 
 #output h3{
     font-size: 1.2vw;
-    margin-top: -28vw;
+    margin-top: -25vw;
     margin-left: -4vw;
     font-family: letra;
 }

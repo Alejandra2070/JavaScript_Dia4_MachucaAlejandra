@@ -35,7 +35,6 @@
 }
 
 #next{
-    transition: all 0.2s ease;
     position: relative;
     font-size: 1.3vw;
     width: 7vw;
@@ -43,18 +42,16 @@
     left: -7vw;
     top: 12vw;
     background: rgb(76, 76, 76);
-    box-shadow: -3px 5px rgb(51, 51, 51);
+    box-shadow: -2px 3px 0 #222, -4px 6px #000;
     border-radius: 0.5vw;
     color: white;
     font-family: letra;
 }
 #next:active{
-    box-shadow: -2px 2px 5px black;
-    transform: translateY(2px);
+    box-shadow: inset -4px 4px 0 black;
 }
 
 #prev{
-    transition: all 0.2s ease;
     position: relative;
     font-size: 1.3vw;
     width: 7vw;
@@ -62,15 +59,14 @@
     left: -23vw;
     top: 12vw;
     background: rgb(76, 76, 76);
-    box-shadow: -3px 5px rgb(51, 51, 51);
+    box-shadow: -2px 3px 0 #222, -4px 6px #000;
     border-radius: 0.5vw;
     color: white;
     font-family: letra;
 }
 
 #prev:active{
-    box-shadow: -2px 2px 5px black;
-    transform: translateY(2px);
+    box-shadow: inset -4px 4px 0 black;
 }
 
 #output{

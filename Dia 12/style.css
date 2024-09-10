@@ -1,0 +1,17 @@
+#contenedor{
+    width: 99vw;
+    height: 98vh;
+    background: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#img1{
+    width: 7vw;
+    
+}
+#imgs{
+    width: 7vw;
+    height: 9.7vw;
+    border: 1px solid red;
+}

@@ -1,8 +1,14 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #2e7d32;
+    background-image: url(./img/pixelcut-export\ \(1\).jpeg);
+    background-repeat: no-repeat;
+    background-size: 100%;
     color: white;
+    margin-top: 8vw;
+}
+#nombreJuego{
+    font-size: 3.5vw;
 }
 #imgs img {
     margin: 5px;
@@ -18,12 +24,12 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #388e3c;
+    background-color: #eb41e3;
     color: white;
     transition: background-color 0.3s;
 }
 button:hover {
-    background-color: #1b5e20;
+    background-color: #9d0595;
 }
 button:disabled {
     background-color: #9e9e9e;
@@ -31,7 +37,9 @@ button:disabled {
 #reglas{
     display: none;
     margin-top: 20px;
-    background-color: #1b5e20;
+    margin-left: 24vw;
+    background-color: #eb2ae1;
     padding: 10px;
     border-radius: 5px;
+    width: 50vw;
 }

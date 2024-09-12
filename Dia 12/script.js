@@ -80,3 +80,5 @@ function mostrarReglas(){
         reglas.style.display = "none"; // Oculta las reglas si están visibles
     }
 }
+
+//Desarrollado por Alejandra Machuca grupo T2

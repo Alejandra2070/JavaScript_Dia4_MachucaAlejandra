@@ -1,0 +1,33 @@
+#caja{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-color: rgb(241, 206, 250);
+    font-size: 1.5vw;
+}
+
+.caja3{
+    text-align: center;
+    width: 35vw;
+    height: auto;
+    background: white;
+}
+
+#input {
+    width: 45vw;
+    height: 2.5vw;
+    border: none;
+    border-radius: 1.2vw;
+    font-size: 1vw;
+    outline: none;
+    box-sizing: border-box;
+    padding-left: 1vw;
+}
+.filtro {
+    display: none;
+}

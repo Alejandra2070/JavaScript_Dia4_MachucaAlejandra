@@ -6,7 +6,7 @@ body{
 }
 
 #contenedor{
-    background-image: url(OIP.jpg);
+    background-image: url(img/OIP.jpg);
     position: absolute;
     display: flex;
     justify-content: center;

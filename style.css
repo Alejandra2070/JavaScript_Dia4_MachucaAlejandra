@@ -10,7 +10,7 @@ body{
     position: absolute;
     display: flex;
     justify-content: center;
-    width: 100vw;
+    width: 99vw;
     height: 100vw;
     top: 0vw;
     left: 0vw;
@@ -53,6 +53,18 @@ body{
     animation-timeline: --reveal;
     animation-range: entry 25% cover 50%;
 }
+#cuadro1:hover{
+    border: 0.5vw solid #ee3535;
+    box-shadow: 1px 10px 15px #eb4c4c;
+}
+#cuadro2:hover{
+    border: 0.5vw solid #ee3535;
+    box-shadow: 1px 10px 15px #eb4c4c;
+}
+#cuadro3:hover{
+    border: 0.5vw solid #ee3535;
+    box-shadow: 1px 10px 15px #eb4c4c;
+}
 #poke{
     width: 21vw;
     margin-top: -3vw;
@@ -73,6 +85,9 @@ body{
     color: rgb(2, 2, 2);
     text-decoration: none;
 }
+#dia9:hover{
+    color: #ee3535;
+}
 #dia8{
     position: absolute;
     font-size: 1.2vw;
@@ -80,10 +95,16 @@ body{
     color: rgb(2, 2, 2);
     text-decoration: none;
 }
+#dia8:hover{
+    color: #ee3535;
+}
 #dia7{
     position: absolute;
     font-size: 1.2vw;
     top: 23vw;
     color: rgb(2, 2, 2);
     text-decoration: none;
+}
+#dia7:hover{
+    color: #ee3535;
 }

@@ -6,6 +6,7 @@ body{
 }
 
 #contenedor{
+    background-image: url(OIP.jpg);
     position: absolute;
     display: flex;
     justify-content: center;
@@ -13,7 +14,7 @@ body{
     height: 100vw;
     top: 0vw;
     left: 0vw;
-    background-image: url(OIP.jpg);
+    
 }
 
 .cuadros{
